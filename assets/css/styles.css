@@ -1,0 +1,817 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Osvell';
+    background-color: #b2b1b1;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Pantalla de carga */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1c1c1c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.spinner {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #d4af37;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Barra de Navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #333;
+    position: sticky; /* Hace que el navbar sea pegajoso */
+    top: 0; /* Se queda en la parte superior */
+    z-index: 1000; /* Asegura que el navbar esté por encima de otros elementos */
+}
+
+.logo {
+    width: 90px; /* Ajusta el tamaño según sea necesario */
+    height: 90px; /* Mantiene las proporciones circulares */
+    object-fit: cover; /* Recorta la imagen si es necesario para ajustarla */
+    border-radius: 50%; /* Hace que el logo sea circular */
+}
+
+.nav-links {
+    list-style: none;
+    gap: 15px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #d4af37;
+}
+
+
+/* Carrusel */
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: #1c1c1c;
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 300px; /* Ajusta el tamaño según sea necesario */
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+}
+
+/* Botones de navegación */
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(50, 50, 50, 0.5);
+    color: #fff;
+    font-size: 2em;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    background-color: rgba(50, 50, 50, 0.8);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Sección de Tarjetas */
+.card-section {
+    padding: 40px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.card-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.card {
+    width: 100%;
+    min-height: 250px;  /* Asegura que las tarjetas tengan suficiente altura */
+    background-color: #333;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s, filter 0.5s ease-in-out;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.card-text {
+    font-size: 1.5em;
+    color: #d4af37;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.card:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    filter: brightness(1.15);
+}
+
+.card:hover .card-overlay {
+    opacity: 1;
+}
+
+/* Sección de Novedades */
+.novedades {
+    padding: 40px;
+    background-color: #f4f1e1;  /* Color vintage suave */
+    color: #333;
+    text-align: center;
+    border-top: 4px solid #d4af37;  /* Borde dorado */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+.novedades h2 {
+    font-family: 'Osvell';  /* Fuente vintage elegante */
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #d4af37;  /* Color dorado */
+}
+
+/* Contenedor de las tarjetas */
+.novedad-card-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    box-sizing: border-box; /* Asegura que los márgenes no se sumen al tamaño del contenedor */
+}
+
+/* Estilo de las tarjetas */
+.novedad-card {
+    width: calc(33.333% - 20px); /* Para que las tarjetas ocupen el 33% menos el espacio del gap */
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; /* Asegura que el padding y los márgenes no afecten el tamaño */
+}
+
+.novedad-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen de la tarjeta */
+.novedad-card-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease;
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
+    object-position: center; /* Centra la imagen */
+}
+
+/* Estilo del contenido dentro de la tarjeta */
+.novedad-card-content {
+    padding: 15px;
+}
+
+/* Efecto de hover sobre la imagen */
+.novedad-card:hover .novedad-card-image {
+    transform: scale(1.05);
+}
+
+.novedad-title {
+    font-family: 'Osvell';  /* Fuente vintage */
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.novedad-description {
+    font-size: 1.1em;
+    color: #444;  /* Color más claro para la descripción */
+    line-height: 1.6;
+    font-weight: 400;  /* Para hacerlo más legible */
+}
+
+/* Sección de Quiénes Somos */
+.quienes-somos {
+    background-color: #2C3E50; /* Fondo elegante gris oscuro/azul */
+    color: #fff; /* Texto blanco para contraste */
+    position: relative;
+    overflow: hidden;
+}
+
+.quienes-somos h2 {
+    font-family: 'Osvell'; /* Fuente moderna */
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 40px;
+    text-transform: uppercase; /* Titulo en mayúsculas para mayor impacto */
+    font-weight: 600; /* Peso de fuente más pesado para darle presencia */
+}
+
+.quienes-somos-text {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: #ddd; /* Texto más suave para mayor legibilidad */
+    text-align: justify; /* Justifica el texto para un look más pulido */
+}
+
+.quienes-somos-image img {
+    border-radius: 50%; /* Hace la imagen circular */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 250px; /* Limita el tamaño de la imagen */
+    height: 250px; /* Fuerza el alto de la imagen para mantener el círculo */
+    object-fit: cover; /* Hace que la imagen se recorte de manera apropiada para el círculo */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+/* Hover effect para la imagen */
+.quienes-somos-image img:hover {
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen ligeramente al pasar el ratón */
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3); /* Aumenta la sombra en hover */
+}
+
+.quienes-somos .container {
+    z-index: 1;
+}
+
+.quienes-somos::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Capa oscura para resaltar el texto */
+    z-index: -1;
+    filter: blur(8px);
+}
+
+
+.icon {
+    width: 100px;
+    height: 100px;
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+.contacto {
+    padding: 60px;
+    background-color: #f8f8f8; /* Gris suave, elegante */
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
+    margin-top: 30px;
+}
+
+/* Título de la sección */
+.contacto h2 {
+    font-family: 'Osvell';
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333; /* Gris oscuro, para evitar exceso de saturación */
+}
+
+/* Formulario de contacto */
+.contacto-form {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.contacto-form form {
+    width: 100%;
+    max-width: 600px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contacto-form input, 
+.contacto-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+.contacto-form input:focus,
+.contacto-form textarea:focus {
+    border-color: #d4af37; /* Dorado suave al hacer foco */
+    outline: none;
+    background-color: #fff5e1;
+}
+
+.contacto-form button {
+    padding: 12px 24px;
+    border: none;
+    background-color: #d4af37; /* Dorado discreto */
+    color: white;
+    font-size: 1.1em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contacto-form button:hover {
+    background-color: #b8962f; /* Dorado más oscuro al pasar el ratón */
+}
+
+/* Información de contacto */
+.contacto-info {
+    margin-top: 30px;
+    color: #666;
+}
+
+.contacto-info a {
+    color: #d4af37;
+    text-decoration: none;
+}
+
+.contacto-info a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Expandido y Estilo Vintage */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: 'Osvell';
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-top: 2px solid #d4af37; /* Línea dorada superior */
+}
+
+.footer .footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer .footer-title {
+    color: #d4af37;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.footer p, .footer a {
+    color: #f1f1f1;
+    font-size: 1em;
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #d4af37; /* Efecto de hover en dorado */
+    text-decoration: underline;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-icons img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1); /* Cambia el color de los iconos a blanco */
+    transition: transform 0.3s;
+}
+
+.footer-icons img:hover {
+    transform: scale(1.2);
+    filter: brightness(0) invert(0.5);
+}
+
+/* Botón de Preguntas Frecuentes */
+.footer-faq .btn {
+    color: #d4af37; /* Color dorado del texto */
+    border-color: #d4af37; /* Borde dorado */
+    transition: all 0.3s ease;
+}
+
+.footer-faq .btn:hover {
+    background-color: #d4af37; /* Fondo dorado al pasar el cursor */
+    color: #444; /* Texto oscuro para contraste */
+}
+
+/* Contenedor principal de las burbujas */
+.social-bubbles {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaciado entre las burbujas */
+    z-index: 9999;
+}
+
+/* Estilo general de las burbujas */
+.social-bubble {
+    background-color: #ffffff;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Necesario para posicionar la etiqueta */
+}
+
+/* Tamaño de los íconos */
+.social-bubble img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s;
+}
+
+/* Etiqueta al lado de WhatsApp */
+.social-bubble.whatsapp .bubble-label {
+    position: absolute;
+    right: calc(100% + 10px); /* Ajuste al lado izquierdo de la burbuja */
+    background-color: #25d366;
+    color: white;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    white-space: nowrap; /* Evitar que el texto se divida */
+}
+
+/* Hover en WhatsApp: resaltar burbuja y etiqueta */
+.social-bubble.whatsapp:hover .bubble-label {
+    background-color: #20b558;
+}
+
+/* Efecto al pasar el mouse */
+.social-bubble:hover {
+    transform: scale(1.1);
+}
+
+/* Estilo específico para cada burbuja */
+.social-bubble.whatsapp {
+    background-color: #25d366;
+}
+
+.social-bubble.facebook {
+    background-color: #1877f2;
+}
+
+.social-bubble.instagram {
+    background-color: #e1306c;
+}
+
+/* Cambio de color al pasar el mouse */
+.social-bubble.whatsapp:hover {
+    background-color: #20b558;
+}
+
+.social-bubble.facebook:hover {
+    background-color: #145dbb;
+}
+
+.social-bubble.instagram:hover {
+    background-color: #c4275d;
+}
+
+.redireccion {
+    text-decoration: none;
+    color: #d4af37;
+}
+
+.redireccion_btn {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* Sección de Categorías */
+.categorias-seccion, .subcategorias-seccion, .testimonios-seccion {
+    padding: 40px 0;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.categorias-grid, .subcategorias-grid, .testimonios-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+/* Estilos para la sección de Categorías */
+.categorias-seccion {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+}
+
+.seccion-titulo {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.seccion-descripcion {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.categorias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.categoria-tarjeta {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.categoria-tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.categoria-imagen {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 5px solid #f3f3f3;
+}
+
+.categoria-detalles {
+    padding: 20px;
+    text-align: center;
+}
+
+.categoria-nombre {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.categoria-descripcion {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.boton-ver-mas {
+    font-size: 1rem;
+    color: #fff;
+    background-color: #FF6A13;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.boton-ver-mas:hover {
+    background-color: #ff4d00;
+}
+
+
+.boton-ver-mas {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.boton-ver-mas:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos personalizados para la sección de Testimonios */
+.testimonios-seccion {
+    background-color: #f8f9fa; /* Fondo claro y limpio */
+}
+
+.testimonios-seccion h2 {
+    font-size: 3rem;
+    color: #d4af37; /* Color dorado para el título */
+    font-family: 'Osvell';
+}
+
+.testimonio-tarjeta {
+    border-radius: 20px; /* Bordes redondeados más suaves */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-color: #ffffff; /* Fondo blanco para la tarjeta */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto de hover suave */
+}
+
+.testimonio-tarjeta:hover {
+    transform: translateY(-5px); /* Desplazamiento hacia arriba */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Sombra más fuerte al hacer hover */
+}
+
+.testimonio-foto-container {
+    display: flex;
+    justify-content: center;
+}
+
+.testimonio-foto {
+    width: 100px; /* Tamaño de la imagen */
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%; /* Imagen circular */
+    border: 3px solid #d4af37; /* Borde dorado alrededor de la foto */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.testimonio-info {
+    margin-top: 15px;
+    color: #555; /* Color de texto gris oscuro para mayor legibilidad */
+}
+
+.testimonio-comentario {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #666;
+}
+
+.testimonio-nombre {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.testimonio-estrellas i {
+    font-size: 1.2rem;
+    margin-right: 5px;
+}
+
+/* Clase para tarjetas agotadas */
+.card.sold-out {
+    border: 2px solid red; /* Borde rojo */
+    position: relative; /* Para el texto superpuesto */
+    opacity: 0.8; /* Leve opacidad */
+}
+
+.card.sold-out .card-img-top {
+    filter: grayscale(100%); /* Imagen en escala de grises */
+}
+
+.card.sold-out .sold-out-label {
+    position: absolute;
+    top: 50%; /* Centrado vertical */
+    left: 50%; /* Centrado horizontal */
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 0, 0, 0.8); /* Fondo semitransparente */
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: line-through; /* Línea sobre el texto */
+}
+
+.card.sold-out button {
+    background-color: gray !important; /* Botón desactivado */
+    cursor: not-allowed; /* Cursor de no permitido */
+}
+
+
+@media (max-width: 768px) {
+    .whatsapp-bubble {
+        bottom: 15px;
+        right: 15px;
+        padding: 8px;
+    }
+
+    .whatsapp-bubble img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@font-face {
+    font-family: 'Osvell';
+    src: url(/assets/fonts/Roboto_Condensed/RobotoCondensed-Italic-VariableFont_wght.ttf) format(truetype);
+}
