@@ -8,7 +8,7 @@
 body {
     font-family: 'Osvell';
     background-color: #b2b1b1;
-    color: #333;
+    color: #000;
     overflow-x: hidden;
 }
 
@@ -46,7 +46,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
-    background-color: #333;
+    background-color: #000;
     position: sticky; /* Hace que el navbar sea pegajoso */
     top: 0; /* Se queda en la parte superior */
     z-index: 1000; /* Asegura que el navbar esté por encima de otros elementos */
@@ -91,7 +91,7 @@ body {
 .carousel-item {
     min-width: 100%;
     height: 300px; /* Ajusta el tamaño según sea necesario */
-    background-color: #333;
+    background-color: #000;
     color: #fff;
     display: flex;
     align-items: center;
@@ -139,7 +139,7 @@ body {
 .card-section h2 {
     font-size: 2em;
     margin-bottom: 20px;
-    color: #333;
+    color: #000;
 }
 
 .card-container {
@@ -149,21 +149,30 @@ body {
     justify-content: center;
 }
 
+/* Estilo básico para las tarjetas */
 .card {
     width: 100%;
-    min-height: 250px;  /* Asegura que las tarjetas tengan suficiente altura */
-    background-color: #333;
+    min-height: 200px;  /* Tarjetas más pequeñas */
+    background-color: #000;
     background-size: cover;
     background-position: center;
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5em;
+    font-size: 1.2em;  /* Fuente más pequeña */
     border-radius: 10px;
     overflow: hidden;
     position: relative;
     transition: transform 0.3s, box-shadow 0.3s, filter 0.5s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);  /* Sombra por defecto */
+}
+
+/* Efectos al pasar el ratón por encima */
+.card:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);  /* Más sombra al hacer hover */
+    filter: brightness(1.15);
 }
 
 .card-overlay {
@@ -181,26 +190,71 @@ body {
 }
 
 .card-text {
-    font-size: 1.5em;
+    font-size: 1.2em;  /* Fuente más pequeña */
     color: #d4af37;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-.card:hover {
-    transform: scale(1.05) translateY(-10px);
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-    filter: brightness(1.15);
+.card:hover .card-overlay {
+    opacity: 1;  /* Mostrar el texto al hacer hover */
 }
 
-.card:hover .card-overlay {
-    opacity: 1;
+/* Cambios para dispositivos móviles (hasta 767px) */
+@media (max-width: 767px) {
+    /* Para las categorías: mostrar en 2x2 */
+    .row-cols-1, .row-cols-md-2, .row-cols-lg-4 {
+        grid-template-columns: repeat(2, 1fr);  /* 2 columnas en móviles */
+    }
+
+    .card {
+        min-height: 200px;  /* Mantener la altura pequeña */
+    }
+
+    .card-text {
+        font-size: 1em;
+    }
+
+    /* Para productos similares: también 2 columnas en móviles */
+    .col-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
 }
+
+/* Cambios para dispositivos medianos y grandes (768px y superiores) */
+@media (min-width: 768px) {
+    .row-cols-md-2 {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
+    }
+
+    .card-text {
+        font-size: 1.3em;
+    }
+
+    .col-md-4 {
+        flex: 0 0 33.33%;
+        max-width: 33.33%; /* 3 columnas en pantallas medianas */
+    }
+}
+
+/* Para pantallas grandes (1024px y superiores) */
+@media (min-width: 1024px) {
+    .row-cols-lg-4 {
+        grid-template-columns: repeat(4, 1fr); /* 4 columnas en pantallas grandes */
+    }
+
+    .col-lg-3 {
+        flex: 0 0 25%;
+        max-width: 25%; /* 4 columnas en pantallas grandes */
+    }
+}
+
 
 /* Sección de Novedades */
 .novedades {
     padding: 40px;
     background-color: #f4f1e1;  /* Color vintage suave */
-    color: #333;
+    color: #000;
     text-align: center;
     border-top: 4px solid #d4af37;  /* Borde dorado */
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
@@ -264,7 +318,7 @@ body {
 .novedad-title {
     font-family: 'Osvell';  /* Fuente vintage */
     font-size: 1.5em;
-    color: #333;
+    color: #000;
     margin-bottom: 10px;
 }
 
@@ -373,7 +427,7 @@ body {
     font-family: 'Osvell';
     font-size: 2.5em;
     margin-bottom: 20px;
-    color: #333; /* Gris oscuro, para evitar exceso de saturación */
+    color: #000; /* Gris oscuro, para evitar exceso de saturación */
 }
 
 /* Formulario de contacto */
@@ -401,7 +455,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 1em;
-    color: #333;
+    color: #000;
     background-color: #f9f9f9;
     transition: all 0.3s ease;
 }
@@ -445,7 +499,7 @@ body {
 
 /* Footer Expandido y Estilo Vintage */
 .footer {
-    background-color: #333;
+    background-color: #000;
     color: #fff;
     padding: 40px 20px;
     text-align: center;
@@ -622,7 +676,7 @@ body {
 .seccion-titulo {
     text-align: center;
     font-size: 2.5rem;
-    color: #333;
+    color: #000;
     margin-bottom: 20px;
 }
 
@@ -668,7 +722,7 @@ body {
 
 .categoria-nombre {
     font-size: 1.8rem;
-    color: #333;
+    color: #000;
     margin-bottom: 10px;
 }
 
@@ -758,7 +812,7 @@ body {
 .testimonio-nombre {
     font-weight: bold;
     font-size: 1.2rem;
-    color: #333;
+    color: #000;
 }
 
 .testimonio-estrellas i {
