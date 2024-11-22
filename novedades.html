@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProduGallo | Novedades</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="shortcut icon" href="assets/img/Logo/Logo_2.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+CU:wght@100..400&family=Protest+Guerrilla&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Pantalla de carga -->
+    <div id="loader" class="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Contenido de la Página -->
+    <div id="content" style="display: none;">
+        <!-- Barra de Navegación -->
+        <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #000;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/img/Logo/Logo_2.png" alt="Logo ProduGallo" class="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto nav-links">
+                        <li class="nav-item">
+                            <a class="nav-link text-white active" aria-current="page" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="categorias.html">Categorías</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="novedades.html">Novedades</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">¿Quiénes Somos?</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Contáctanos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <footer class="footer">
+            <div class="footer-content">
+                <h2 class="footer-title">ProduGallo</h2>
+                <p>&copy; 2024 ProduGallo. Todos los derechos reservados.</p>
+                <p>Encuéntranos también en redes sociales:</p>
+                <div class="footer-icons">
+                    <a href="https://www.facebook.com/profile.php?id=100088339270044" target="_blank">
+                        <img width="50" height="50" src="https://img.icons8.com/ios/50/facebook-new.png" alt="facebook-new"/>
+                    </a>
+                    <a href="https://www.instagram.com/produgallos?igsh=YzljYTk1ODg3Zg%3D%3D" target="_blank">
+                        <img width="50" height="50" src="https://img.icons8.com/ios/50/instagram-new.png" alt="instagram-new"/>
+                    </a>
+                    <a href="https://wa.me/584247056529" target="_blank">
+                        <img width="50" height="50" src="https://img.icons8.com/ios/50/whatsapp--v1.png" alt="whatsapp--v1"/>
+                    </a>
+                </div>
+                <!-- Botón de Preguntas Frecuentes -->
+                <div class="footer-faq mt-3">
+                    <a href="faq.html" class="btn btn-outline-light btn-lg" style="text-decoration: none;">Preguntas Frecuentes</a>
+                </div>
+            </div>
+        </footer>        
+        
+<!-- Burbuja flotante de redes sociales -->
+<div class="social-bubbles">
+
+    <!-- Burbuja de Facebook -->
+    <a href="https://www.facebook.com/profile.php?id=100088339270044" target="_blank" class="social-bubble facebook">
+        <img src="assets/img/icons/facebook.png" alt="Facebook" />
+        
+    </a>
+    <!-- Burbuja de Instagram -->
+    <a href="https://www.instagram.com/produgallos?igsh=YzljYTk1ODg3Zg%3D%3D" target="_blank" class="social-bubble instagram">
+        <img src="assets/img/icons/insta.png" alt="Instagram" />
+    </a>
+
+    <!-- Burbuja de WhatsApp -->
+    <a href="https://wa.me/584247056529" target="_blank" class="social-bubble whatsapp">
+        <img src="assets/img/icons/whatsapp.svg" alt="WhatsApp" />
+        <span class="bubble-label">Contáctanos</span>
+    </a>
+</div>
+
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

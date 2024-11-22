@@ -8,6 +8,9 @@
     <link rel="shortcut icon" href="assets/img/Logo/Logo_2.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+CU:wght@100..400&family=Protest+Guerrilla&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Pantalla de carga -->
@@ -25,7 +28,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto nav-links">
                     <li class="nav-item">
                         <a class="nav-link text-white active" aria-current="page" href="index.html">Inicio</a>
                     </li>
@@ -33,7 +36,7 @@
                         <a class="nav-link text-white" href="categorias.html">Categorías</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Novedades</a>
+                        <a class="nav-link text-white" href="novedades.html">Novedades</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="#">¿Quiénes Somos?</a>
@@ -56,46 +59,31 @@
             </div>
         </section>
 
-    <!-- Categorías -->
-    <section id="categoria" class="card-section">
-        <h2><a href="categorias.html" class="redireccion">Categorías</a></h2>
-        <div class="container">
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <section id="categoria" class="card-section">
+            <h2><a href="categorias.html" class="redireccion">Categorías</a></h2>
+            <div class="grid-container">
                 <!-- Card 1 -->
-                <div class="col">
-                    <div class="card" style="background-image: url('assets/img/AnillosKiris/Imagen\ de\ WhatsApp\ 2024-11-11\ a\ las\ 11.20.25_63333839.jpg');">
-                        <div class="card-overlay">
-                            <span class="card-text">Placas</span>
-                        </div>
-                    </div>
+                <div class="card">
+                    <div class="card-title">Placas</div>
+                    <div class="card-content" style="background-image: url('assets/img/AnillosKiris/placas.jpg');"></div>
                 </div>
                 <!-- Card 2 -->
-                <div class="col">
-                    <div class="card" style="background-image: url('assets/img/AnillosKiris/Imagen\ de\ WhatsApp\ 2024-11-11\ a\ las\ 11.20.26_b5672946.jpg');">
-                        <div class="card-overlay">
-                            <span class="card-text">Anillos</span>
-                        </div>
-                    </div>
+                <div class="card">
+                    <div class="card-title">Anillos</div>
+                    <div class="card-content" style="background-image: url('assets/img/AnillosKiris/anillos.jpg');"></div>
                 </div>
                 <!-- Card 3 -->
-                <div class="col">
-                    <div class="card" style="background-image: url('assets/img/Candados/Imagen\ de\ WhatsApp\ 2024-11-11\ a\ las\ 17.01.40_48ed4c92.jpg');">
-                        <div class="card-overlay">
-                            <span class="card-text">Candaditos</span>
-                        </div>
-                    </div>
+                <div class="card">
+                    <div class="card-title">Candaditos</div>
+                    <div class="card-content" style="background-image: url('assets/img/Candados/candados.jpg');"></div>
                 </div>
                 <!-- Card 4 -->
-                <div class="col">
-                    <div class="card" style="background-image: url('assets/img/AnillosKiris/Imagen\ de\ WhatsApp\ 2024-11-11\ a\ las\ 11.20.25_d4acb0da.jpg');">
-                        <div class="card-overlay">
-                            <span class="card-text">Placas Kiris</span>
-                        </div>
-                    </div>
+                <div class="card">
+                    <div class="card-title">Placas Kiris</div>
+                    <div class="card-content" style="background-image: url('assets/img/AnillosKiris/PK.jpg');"></div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section> 
 
 <!-- Carrusel -->
 <section class="carousel-section mb-4">
