@@ -267,82 +267,82 @@ p, a {
 
 /* Sección de Novedades */
 .novedades {
-    padding: 40px;
+    padding: 50px 10%;
     background-color: #f4f1e1;  /* Color vintage suave */
     color: #000;
     text-align: center;
     border-top: 4px solid #d4af37;  /* Borde dorado */
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
     margin-top: 30px;
-}
-
-.novedades h2 {
-    font-family: 'Osvell';  /* Fuente vintage elegante */
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #d4af37;  /* Color dorado */
-}
-
-/* Contenedor de las tarjetas */
-.novedad-card-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 20px;
-    box-sizing: border-box; /* Asegura que los márgenes no se sumen al tamaño del contenedor */
-}
-
-/* Estilo de las tarjetas */
-.novedad-card {
-    width: calc(33.333% - 20px); /* Para que las tarjetas ocupen el 33% menos el espacio del gap */
+  }
+  
+  .novedades h2 {
+    font-family: 'Osvell', sans-serif;  /* Fuente vintage elegante */
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #333;  /* Color oscuro */
+  }
+  
+  /* Contenedor de las tarjetas */
+  .novedades-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  
+  /* Estilo de las tarjetas */
+  .novedad-card {
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-sizing: border-box; /* Asegura que el padding y los márgenes no afecten el tamaño */
-}
-
-.novedad-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Imagen de la tarjeta */
-.novedad-card-image {
-    height: 200px;
-    background-size: cover;
-    background-position: center;
     transition: transform 0.3s ease;
-    width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
-    object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
-    object-position: center; /* Centra la imagen */
-}
-
-/* Estilo del contenido dentro de la tarjeta */
-.novedad-card-content {
-    padding: 15px;
-}
-
-/* Efecto de hover sobre la imagen */
-.novedad-card:hover .novedad-card-image {
-    transform: scale(1.05);
-}
-
-.novedad-title {
-    font-family: 'Osvell';  /* Fuente vintage */
-    font-size: 1.5em;
-    color: #000;
-    margin-bottom: 10px;
-}
-
-.novedad-description {
-    font-size: 1.1em;
-    color: #444;  /* Color más claro para la descripción */
-    line-height: 1.6;
-    font-weight: 400;  /* Para hacerlo más legible */
-}
+  }
+  
+  .novedad-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .novedad-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .novedad-info {
+    padding: 20px;
+  }
+  
+  .novedad-titulo {
+    font-size: 1.8rem;
+    color: #333;
+  }
+  
+  .novedad-fecha {
+    font-size: 1rem;
+    color: #aaa;
+  }
+  
+  .novedad-resumen {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .leer-mas {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .leer-mas:hover {
+    background-color: #0056b3;
+  }
+  
 
 /* Sección de Quiénes Somos */
 .quienes-somos {
@@ -796,7 +796,7 @@ p, a {
 
 .testimonio-tarjeta:hover {
     transform: translateY(-5px); /* Desplazamiento hacia arriba */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Sombra más fuerte al hacer hover */
+    box-shadow: 0 6px 15px #ffffff; /* Sombra más fuerte al hacer hover */
 }
 
 .testimonio-foto-container {
@@ -805,12 +805,13 @@ p, a {
 }
 
 .testimonio-foto {
-    width: 100px; /* Tamaño de la imagen */
-    height: 100px;
-    object-fit: cover;
-    border-radius: 50%; /* Imagen circular */
-    border: 3px solid #d4af37; /* Borde dorado alrededor de la foto */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: 150px !important; /* Incrementar el tamaño */
+    height: 150px !important; /* Igual al ancho para mantener la forma circular */
+    border-radius: 50%; /* Mantiene el diseño circular */
+    border: 4px solid #d4af37; /* Borde dorado */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra más visible */
+    object-fit: cover; /* Ajusta la imagen al contenedor */
+    overflow: hidden; /* Asegura que todo fuera del círculo quede oculto */
 }
 
 .testimonio-info {
