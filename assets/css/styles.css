@@ -868,6 +868,33 @@ p, a {
 }
 
 
+/* Estilos para las imágenes del producto */
+.product-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-image {
+    margin-bottom: 15px;
+}
+
+.additional-images {
+    display: flex;
+    gap: 10px;
+}
+
+.additional-images img {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.additional-images img:hover {
+    transform: scale(1.1);
+}
+
 @media (max-width: 768px) {
     .whatsapp-bubble {
         bottom: 15px;
